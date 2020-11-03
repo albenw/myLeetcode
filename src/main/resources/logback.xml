@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%level] [%thread] [%logger{50}.%M] %msg%n
+            </pattern>
+            <immediateFlush>true</immediateFlush>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoding>UTF-8</encoding>
+        <prudent>false</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--日志文件输出的文件名 -->
+            <maxHistory>1</maxHistory>
+            <fileNamePattern>/Users/alben.wong/Documents/logs/myTestProject.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符 -->
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss,Asia/Shanghai}] [%t] [%p] [%c{1}] - %m%n
+            </pattern>
+            <immediateFlush>true</immediateFlush>
+        </encoder>
+        <!--日志文件最大的大小 -->
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>1MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+
+    <root level="INFO">
+        <!--<appender-reference reference="FILE" />-->
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

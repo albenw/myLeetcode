@@ -2,6 +2,7 @@ package com.albenw.algorithm.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
+import static com.albenw.algorithm.utils.TreeNodeUtil.*;
 
 /**
  * @author alben.wong
@@ -9,19 +10,6 @@ import java.util.List;
  * leetcode 230. 二叉搜索树中第K小的元素
  */
 public class KthSmallest {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public int kthSmallest(TreeNode root, int k) {
         List<Integer> orderValues = new ArrayList<>();

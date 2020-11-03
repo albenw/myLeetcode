@@ -1,8 +1,8 @@
 package com.albenw.algorithm.utils;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.List;
+import org.junit.Test;
+
+import java.util.*;
 
 /**
  * @author alben.wong
@@ -11,10 +11,10 @@ import java.util.List;
 public class TreeNodeUtil {
 
     public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) {
+        public int val;
+        public TreeNode left;
+        public TreeNode right;
+        public TreeNode(int x) {
             val = x;
         }
     }
@@ -34,20 +34,31 @@ public class TreeNodeUtil {
         int index = 1;
         while (!deque.isEmpty()){
             TreeNode parent = deque.pollFirst();
-            if(index <= list.size()){
-                TreeNode left = new TreeNode(list.get(index));
-                deque.addLast(left);
-                parent.left = left;
+            if(index < list.size()){
+                if(list.get(index) != null){
+                    TreeNode left = new TreeNode(list.get(index));
+                    deque.addLast(left);
+                    parent.left = left;
+                }
                 index++;
             }
-            if(index <= list.size()){
-                TreeNode right = new TreeNode(list.get(index));
-                deque.addLast(right);
-                parent.right = right;
+            if(index < list.size()){
+                if(list.get(index) != null){
+                    TreeNode right = new TreeNode(list.get(index));
+                    deque.addLast(right);
+                    parent.right = right;
+                }
                 index++;
             }
         }
         return root;
+    }
+
+    @Test
+    public void createByArrayTest(){
+        List<Integer> list = Arrays.asList(1, 2, 3, null, 4, null, 5);
+        TreeNode root = TreeNodeUtil.createByArray(list);
+        assert root != null;
     }
 
 }

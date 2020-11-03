@@ -2,6 +2,7 @@ package com.albenw.algorithm.leetcode;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import static com.albenw.algorithm.utils.TreeNodeUtil.*;
 
 /**
  * @author alben.wong
@@ -25,13 +26,6 @@ public class HasPathSum {
         //这里还需要增加一个判断：叶子节点是否刚好凑够
         boolean b = node.left == null && node.right == null && (target - node.val) == 0;
         return left || right || b;
-    }
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
     }
 
     @Test

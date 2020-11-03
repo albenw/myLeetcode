@@ -2,7 +2,7 @@ package com.albenw.algorithm.leetcode;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-
+import static com.albenw.algorithm.utils.TreeNodeUtil.*;
 /**
  * @author alben.wong
  * @since 2020/11/1.
@@ -44,13 +44,6 @@ public class RobV2 {
         //当父亲节点不选择时 = 左右节点选或不选的最大值
         dp[0] = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
         return dp;
-    }
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
     }
 
     @Test

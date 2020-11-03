@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import static com.albenw.algorithm.utils.TreeNodeUtil.*;
 
 /**
  * @author alben.wong
@@ -13,19 +14,6 @@ import java.util.List;
  */
 @Slf4j
 public class InorderTraversal {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public List<Integer> inorderTraversal(TreeNode root) {
         if(root == null){
@@ -49,7 +37,7 @@ public class InorderTraversal {
     @Test
     public void test1(){
         InorderTraversal inorderTraversal = new InorderTraversal();
-        TreeNode root = new TreeNode();
+        TreeNode root = new TreeNode(0);
         List<Integer> integers = inorderTraversal.inorderTraversal(root);
         log.info("integers={}", integers);
     }

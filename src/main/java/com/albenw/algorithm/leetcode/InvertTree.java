@@ -2,6 +2,7 @@ package com.albenw.algorithm.leetcode;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import static com.albenw.algorithm.utils.TreeNodeUtil.*;
 
 /**
  * @author alben.wong
@@ -11,13 +12,6 @@ import org.junit.Test;
  */
 @Slf4j
 public class InvertTree {
-
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
 
     public TreeNode invertTree(TreeNode root) {
         if(root == null){

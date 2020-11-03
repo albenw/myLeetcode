@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import static com.albenw.algorithm.utils.TreeNodeUtil.*;
 
 /**
  * @author alben.wong
@@ -66,13 +67,6 @@ public class IsSymmetric {
             right--;
         }
         return true;
-    }
-
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
     }
 
     @Test

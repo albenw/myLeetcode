@@ -1,4 +1,6 @@
 package com.albenw.algorithm.leetcode;
+import static com.albenw.algorithm.utils.TreeNodeUtil.*;
+
 
 /**
  * @author alben.wong
@@ -25,16 +27,6 @@ public class LowestCommonAncestor {
             return lowestCommonAncestor(root.right, p, q);
         }
         return root;
-    }
-
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
     }
 
     @Test

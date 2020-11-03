@@ -1,4 +1,5 @@
 package com.albenw.algorithm.leetcode;
+import static com.albenw.algorithm.utils.TreeNodeUtil.*;
 
 /**
  * @author alben.wong
@@ -8,15 +9,6 @@ package com.albenw.algorithm.leetcode;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
 @Slf4j
 public class MaxDepth {
 
@@ -27,15 +19,6 @@ public class MaxDepth {
         int left = maxDepth(root.left);
         int right = maxDepth(root.right);
         return Math.max(left, right) + 1;
-    }
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) {
-            val = x;
-        }
     }
 
     @Test

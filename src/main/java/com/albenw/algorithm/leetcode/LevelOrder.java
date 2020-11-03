@@ -8,20 +8,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+import static com.albenw.algorithm.utils.TreeNodeUtil.*;
+
 /**
  * @author alben.wong
  * @since 2020-09-01.
+ * leetcode 102. 二叉树的层序遍历
  */
 
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
 @Slf4j
 public class LevelOrder {
 
@@ -30,6 +24,7 @@ public class LevelOrder {
         List<List<Integer>> result = new ArrayList<>();
         queue.offer(root);
         while(queue.size() > 0){
+            //当前节点全部取出来，再将它们的子节点加入到队列中
             List<TreeNode> nodes = new ArrayList<>();
             while(queue.size() > 0){
                 nodes.add(queue.poll());
@@ -61,16 +56,6 @@ public class LevelOrder {
                 queue.offer(node.right);
             }
         }
-    }
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) {
-            val = x;
-        }
-
     }
 
     @Test

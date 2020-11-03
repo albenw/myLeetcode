@@ -3,6 +3,7 @@ package com.albenw.algorithm.leetcode;
 /**
  * @author alben.wong
  * @since 2020-08-29.
+ * leetcode 98. 验证二叉搜索树
  */
 
 import lombok.extern.slf4j.Slf4j;
@@ -10,16 +11,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
+import static com.albenw.algorithm.utils.TreeNodeUtil.*;
 
 @Slf4j
 public class IsValidBST {
@@ -54,15 +46,6 @@ public class IsValidBST {
             }
         }
         return true;
-    }
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) {
-            val = x;
-        }
     }
 
     @Test

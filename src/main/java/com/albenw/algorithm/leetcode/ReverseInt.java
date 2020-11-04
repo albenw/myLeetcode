@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * @author alben.wong
  * @since 2020/10/20.
- * leetcode 7. 整数反转s
+ * leetcode 7. 整数反转
  */
 @Slf4j
 public class ReverseInt {

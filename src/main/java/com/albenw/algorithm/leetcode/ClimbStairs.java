@@ -6,7 +6,9 @@ import org.junit.Test;
 /**
  * @author alben.wong
  * @since 2020/10/16.
- * leetcode 70
+ * leetcode 70 爬楼梯
+ * dp入门
+ * 要理解好为啥: dp[n] = dp[n - 1] + dp[n - 2]
  */
 @Slf4j
 public class ClimbStairs {

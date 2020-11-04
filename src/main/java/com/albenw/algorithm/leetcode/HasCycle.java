@@ -4,6 +4,7 @@ package com.albenw.algorithm.leetcode;
  * @author alben.wong
  * @since 2020/10/19.
  * leetcode 141 链表是否有环
+ * 经典：快慢指针
  */
 public class HasCycle {
 

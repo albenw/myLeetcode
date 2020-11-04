@@ -9,6 +9,8 @@ import java.util.List;
 /**
  * @author alben.wong
  * @since 2020-09-02.
+ * leetcode 22. 括号生成
+ * 由于需要遍历出所有情况，所以需要用到回溯
  */
 @Slf4j
 public class GenerateParenthesis {
@@ -24,9 +26,11 @@ public class GenerateParenthesis {
             result.add(subList);
             return;
         }
+        //一共有n个左括号和右括号，把它们用完
         if(left > 0){
             generate(subList + "(", result, left - 1, right);
         }
+        //注意不能先加右括号
         if(right > left){
             generate(subList + ")", result, left, right - 1);
         }

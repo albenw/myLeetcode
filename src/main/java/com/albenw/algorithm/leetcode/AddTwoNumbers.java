@@ -1,20 +1,15 @@
 package com.albenw.algorithm.leetcode;
 
-/**
- * @author alben.wong
- * @since 2020-08-30.
- */
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 /**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
+ * @author alben.wong
+ * @since 2020-08-30.
+ * leetcode 2. 两数相加
+ * 这题不难，比价考察代码能力
  */
+
 @Slf4j
 public class AddTwoNumbers {
 

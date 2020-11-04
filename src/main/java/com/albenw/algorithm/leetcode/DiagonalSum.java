@@ -7,6 +7,7 @@ import org.junit.Test;
  * @author alben.wong
  * @since 2020/10/25.
  * leetcode 1572. 矩阵对角线元素的和
+ * 不难，注意是否需要去重中间点的判断
  */
 @Slf4j
 public class DiagonalSum {

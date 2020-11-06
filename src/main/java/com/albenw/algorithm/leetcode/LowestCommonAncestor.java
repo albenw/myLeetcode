@@ -1,6 +1,7 @@
 package com.albenw.algorithm.leetcode;
 import static com.albenw.algorithm.utils.TreeNodeUtil.*;
-
+import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
 
 /**
  * @author alben.wong
@@ -8,8 +9,6 @@ import static com.albenw.algorithm.utils.TreeNodeUtil.*;
  * leetcode 235. 二叉搜索树的最近公共祖先
  * 这题理解的关键是，由于是二叉搜索树，节点是有序的，所以只需要找到第一个节点 p < node < q，这个就是最近公共祖先了
  */
-import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
 
 @Slf4j
 public class LowestCommonAncestor {

@@ -1,5 +1,6 @@
 package com.albenw.algorithm.utils;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.util.*;
@@ -8,15 +9,42 @@ import java.util.*;
  * @author alben.wong
  * @since 2020/11/2.
  */
+@Slf4j
 public class TreeNodeUtil {
 
     public static class TreeNode {
-        public int val;
+        public Integer val;
         public TreeNode left;
         public TreeNode right;
-        public TreeNode(int x) {
+        public TreeNode(Integer x) {
             val = x;
         }
+    }
+
+    public static List<Integer> bfs(TreeNode node){
+        if(node == null){
+            return new ArrayList<>();
+        }
+        List<Integer> res = new ArrayList<>();
+        Deque<TreeNode> deque = new ArrayDeque<>();
+        deque.addFirst(node);
+        while (!deque.isEmpty()){
+            TreeNode treeNode = deque.pollLast();
+            res.add(treeNode.val);
+            if(treeNode.left != null || treeNode.right != null){
+                if(treeNode.left != null){
+                    deque.addFirst(treeNode.left);
+                }else{
+                    deque.addFirst(new TreeNode(null));
+                }
+                if(treeNode.right != null){
+                    deque.addFirst(treeNode.right);
+                }else{
+                    deque.addFirst(new TreeNode(null));
+                }
+            }
+        }
+        return res;
     }
 
     /**
@@ -59,6 +87,14 @@ public class TreeNodeUtil {
         List<Integer> list = Arrays.asList(1, 2, 3, null, 4, null, 5);
         TreeNode root = TreeNodeUtil.createByArray(list);
         assert root != null;
+    }
+
+    @Test
+    public void bfsTest(){
+        List<Integer> list = Arrays.asList(1, 2, 3, null, 4, null, 5);
+        TreeNode root = TreeNodeUtil.createByArray(list);
+        List<Integer> bfs = TreeNodeUtil.bfs(root);
+        log.info("bfs={}", bfs);
     }
 
 }

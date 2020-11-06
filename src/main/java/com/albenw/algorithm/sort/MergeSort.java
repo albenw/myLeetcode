@@ -56,7 +56,7 @@ public class MergeSort {
             k++;
             i++;
         }
-        if(j <= right){
+        while (j <= right){
             tmp[k] = a[j];
             k++;
             j++;

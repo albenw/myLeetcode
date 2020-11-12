@@ -48,6 +48,29 @@ public class TreeNodeUtil {
     }
 
     /**
+     * 前序遍历
+     * @param node
+     * @return
+     */
+    public static List<Integer> preOrder(TreeNode node){
+        List<Integer> res = new ArrayList<>();
+        preOrder(node, res);
+        return res;
+    }
+
+    private static void preOrder(TreeNode node, List<Integer> res){
+        if(node != null){
+            res.add(node.val);
+        }
+        if(node.left != null){
+            preOrder(node.left, res);
+        }
+        if(node.right != null){
+            preOrder(node.right, res);
+        }
+    }
+
+    /**
      * 根据数组创建一个树
      * @param list
      * @return root
@@ -95,6 +118,13 @@ public class TreeNodeUtil {
         TreeNode root = TreeNodeUtil.createByArray(list);
         List<Integer> bfs = TreeNodeUtil.bfs(root);
         log.info("bfs={}", bfs);
+    }
+
+    @Test
+    public void preOrderTest(){
+        TreeNode byArray = TreeNodeUtil.createByArray(Arrays.asList(1, 2, 5, 3, 4, null, 6));
+        List<Integer> integers = preOrder(byArray);
+        log.info("integers={}", integers);
     }
 
 }

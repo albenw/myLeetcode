@@ -2,12 +2,14 @@ package com.albenw.algorithm.leetcode;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-
+import static com.albenw.algorithm.utils.ListNodeUtil.ListNode;
 /**
  * @author alben.wong
  * @since 2020/10/19.
  * leetcode 21. 合并两个有序链表
  * 难度不大，不过挺考验写代码的能力
+ *
+ * 这题用新建一个dummyHead来做新的头节点，代码会简洁好多，返回dummyHead.next就好
  */
 @Slf4j
 public class MergeTwoLists {
@@ -50,14 +52,6 @@ public class MergeTwoLists {
             l2 = l2.next;
         }
         return head;
-    }
-
-    static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-        }
     }
 
     @Test

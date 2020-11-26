@@ -34,10 +34,10 @@ public class FindKthLargest {
     }
 
     private int quickSort(int[] nums, int left, int right, int findIndex){
-        int pivotIndex = partition(nums, left, right);
         if(left >= right){
             return left;
         }
+        int pivotIndex = partition(nums, left, right);
         if(pivotIndex == findIndex) {
             return pivotIndex;
         }

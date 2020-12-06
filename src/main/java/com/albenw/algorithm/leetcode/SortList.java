@@ -53,44 +53,24 @@ public class SortList {
         return slow;
     }
 
+    /**
+     * 合并两个有序链表
+     * @param l1
+     * @param l2
+     * @return
+     */
     private ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        if(l1 == null && l2 == null){
-            return null;
-        }
         if(l1 == null){
             return l2;
-        }
-        if(l2 == null){
+        }else if(l2 == null){
             return l1;
+        }else if(l1.val < l2.val){
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
+        }else{
+            l2.next = mergeTwoLists(l1, l2.next);
+            return l2;
         }
-        ListNode last = null;
-        ListNode head = null;
-        while(l1 != null && l2 != null){
-            ListNode tmp = l1.val <= l2.val ? l1 : l2;
-            if(last == null){
-                last = tmp;
-                head = last;
-            }else{
-                last.next = tmp;
-                last = last.next;
-            }
-            if(l1.val <= l2.val){
-                l1 = l1.next;
-            }else{
-                l2 = l2.next;
-            };
-        }
-        while (l1 != null){
-            last.next = l1;
-            last = last.next;
-            l1 = l1.next;
-        }
-        while(l2 != null){
-            last.next = l2;
-            last = last.next;
-            l2 = l2.next;
-        }
-        return head;
     }
 
     @Test

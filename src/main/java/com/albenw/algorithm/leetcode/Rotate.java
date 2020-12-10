@@ -15,6 +15,8 @@ import java.util.Arrays;
  *
  * 注意i和j的表示的意思
  * 一共就4种转换，所以顺序并不重要
+ *
+ * 这题需要注意、留心观察得出规律，之后再慢慢写出代码，最后测试一下
  */
 @Slf4j
 public class Rotate {

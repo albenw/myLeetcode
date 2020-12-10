@@ -7,6 +7,8 @@ import org.junit.Test;
  * @author alben.wong
  * @since 2020/12/10.
  * leetcode 66. 加一
+ *
+ * 对新手来说，不错的一道题
  */
 @Slf4j
 public class PlusOne {

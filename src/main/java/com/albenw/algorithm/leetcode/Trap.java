@@ -8,8 +8,11 @@ import org.junit.Test;
  * @since 2020/11/6.
  * leetcode 42. 接雨水
  * 想不到的是："对于数组中的每个元素，我们找出下雨后水能达到的最高位置，等于两边最大高度的较小值减去当前高度的值"
+ * 所以这题的关键在于"找到左右两边的最大值"
+ *
  * 暴力：通过上述求雨水的方法，那么就可以通过遍历每个位置，然后再分别从左右开始遍历求得左右最大值，就可以得出当前位置的可接水量
  * 优化：不用每次都求左右的最大值，可以利用之前求得已知最大值
+ *
  */
 @Slf4j
 public class Trap {
@@ -25,8 +28,9 @@ public class Trap {
         //rightMax[i]表示i位置右边的最大值
         int[] rightMax = new int[height.length];
         rightMax[height.length - 1] = height[height.length - 1];
-        //leftMax和rightMax有点像dp
+        //leftMax和rightMax有点像dp，利用已知最大值
         for(int i = 1; i < height.length; i++){
+            //等于前一个最大值跟自己比较
             leftMax[i] = Math.max(height[i], leftMax[i - 1]);
         }
         for(int j = height.length - 2; j >= 0; j--){

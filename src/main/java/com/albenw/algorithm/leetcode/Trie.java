@@ -8,6 +8,7 @@ import org.junit.Test;
  * @since 2020/10/11.
  * leetcode 208
  * 实现字典树
+ * 原理就是拼成每一层有26个字母（a-z）的树
  */
 @Slf4j
 public class Trie {
@@ -30,7 +31,10 @@ public class Trie {
         root = new TreeNode('^');
     }
 
-    /** Inserts a word into the trie. */
+    /**
+     * 遍历word的每个字母为每一层添加其字母（如果不存在的话）
+     * @param word
+     */
     public void insert(String word) {
         if(word == null || word.length() == 0){
             return;

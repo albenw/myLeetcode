@@ -1,4 +1,4 @@
-package com.albenw.algorithm;
+package com.albenw.algorithm.leetcode;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

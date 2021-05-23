@@ -1,7 +1,11 @@
 package com.albenw.algorithm.leetcode;
 
+import com.albenw.algorithm.utils.ListNodeUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+
+import java.util.Arrays;
+import static com.albenw.algorithm.utils.ListNodeUtil.*;
 
 /**
  * @author alben.wong
@@ -21,7 +25,7 @@ public class AddTwoNumbers {
         boolean addition = false;
         while(cur1 != null || cur2 != null || addition){
             if(cur1 == null && cur2 == null && addition){
-                constructNode(pre, 1);
+//                constructNode(pre, 1);
                 addition = false;
                 continue;
             }
@@ -37,7 +41,8 @@ public class AddTwoNumbers {
             }else{
                 addition = false;
             }
-            ListNode node = constructNode(pre, value);
+//            ListNode node = constructNode(pre, value);
+            ListNode node = null;
             if(pre == null){
                 start = node;
             }
@@ -52,48 +57,13 @@ public class AddTwoNumbers {
         return start;
     }
 
-    private ListNode constructNode(ListNode pre, int value){
-        ListNode node = new ListNode(value);
-        if(pre != null){
-            pre.next = node;
-        }
-        return node;
-    }
-
-    public class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     @Test
     public void test1(){
-        ListNode n1 = new ListNode(5);
-//        ListNode n2 = new ListNode(8);
-//        ListNode n3 = new ListNode(3);
-
-        ListNode n4 = new ListNode(5);
-//        ListNode n5 = new ListNode(6);
-//        ListNode n6 = new ListNode(4);
-
-//        n1.next = n2;
-//        n2.next = n3;
-
-//        n4.next = n5;
-//        n5.next = n6;
-
+        ListNode l1 = ListNodeUtil.createByArray(Arrays.asList(1, 2, 3));
+        ListNode l2 = ListNodeUtil.createByArray(Arrays.asList(2, 5, 7));
         AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
-        ListNode listNode = addTwoNumbers.addTwoNumbers(n1, n4);
+        ListNode listNode = addTwoNumbers.addTwoNumbers(l1, l2);
         print(listNode);
-    }
-
-    private void print(ListNode node){
-        while (node != null){
-            log.info(node.val + "");
-            node = node.next;
-        }
     }
 
 }

@@ -7,6 +7,9 @@ import org.junit.Test;
 /**
  * @author alben.wong
  * @since 2020/10/13.
+ * 每一轮排序：
+ * （1）邻近的两两排序
+ * （2）本轮最大的会"冒"到最后
  */
 @Slf4j
 public class BubbleSort {

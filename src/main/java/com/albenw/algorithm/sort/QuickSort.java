@@ -6,6 +6,7 @@ import org.junit.Test;
 /**
  * @author alben.wong
  * @since 2020/10/13.
+ * 自上而下
  */
 @Slf4j
 public class QuickSort {
@@ -63,16 +64,19 @@ public class QuickSort {
      * @param high
      */
     private int partition2(int[] arr, int low, int high){
-        int pivot = arr[low];     //枢轴记录
+        //枢轴记录
+        int pivot = arr[low];
         while (low < high){
             while (low < high && arr[high] >= pivot){
                 --high;
             }
-            arr[low] = arr[high];             //交换比枢轴小的记录到左端
+            //交换比枢轴小的记录到左端
+            arr[low] = arr[high];
             while (low < high && arr[low] <= pivot) {
                 ++low;
             }
-            arr[high] = arr[low];           //交换比枢轴小的记录到右端
+            //交换比枢轴小的记录到右端
+            arr[high] = arr[low];
         }
         //扫描完成，枢轴到位
         arr[low] = pivot;

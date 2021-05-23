@@ -6,6 +6,7 @@ import org.junit.Test;
 /**
  * @author alben.wong
  * @since 2020/10/13.
+ * 自底而上
  */
 @Slf4j
 public class MergeSort {
@@ -61,6 +62,7 @@ public class MergeSort {
             k++;
             j++;
         }
+        //修改原数组的值
         for(int l = 0; l < k; l++){
             a[left + l] = tmp[l];
         }

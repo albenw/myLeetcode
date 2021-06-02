@@ -22,12 +22,18 @@ public class Permute {
         for(int i = 0; i < nums.length; i++){
             Deque<Integer> deque = new ArrayDeque<>();
             deque.addLast(i);
-            dfs(nums, res, deque);
+            backtrack(nums, res, deque);
         }
         return res;
     }
 
-    public void dfs(int[] nums, List<List<Integer>> res, Deque<Integer> addedIndex){
+    /**
+     * 回溯
+     * @param nums
+     * @param res
+     * @param addedIndex
+     */
+    public void backtrack(int[] nums, List<List<Integer>> res, Deque<Integer> addedIndex){
         if(addedIndex.size() == nums.length){
             res.add(convert(nums, addedIndex));
             return;
@@ -38,7 +44,7 @@ public class Permute {
                 //增加一个试试
                 addedIndex.addLast(i);
                 //使用当前这个数，将后面的数字递归下去
-                dfs(nums, res, addedIndex);
+                backtrack(nums, res, addedIndex);
                 //还原回去
                 addedIndex.removeLast();
             }
@@ -56,7 +62,7 @@ public class Permute {
     @Test
     public void test(){
         Permute permute = new Permute();
-        int[] nums = new int[]{1, 2, 3, 4};
+        int[] nums = new int[]{1, 2, 3};
         List<List<Integer>> permute1 = permute.permute(nums);
         log.info("permute1={}", permute1);
     }
